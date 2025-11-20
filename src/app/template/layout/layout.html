@@ -1,17 +1,17 @@
 <header class="bg-gradient-to-r from-blue-500 to-blue-700 shadow-lg p-6">
   <div class="text-center font-extrabold text-white">
-    <h2>Titulo</h2>
-    <h3 class="mb-2 font-bold">Subtitulo</h3>
+    <h2>{{props.titulo}}</h2>
+    <h3 class="mb-2 font-bold">{{props.subTitulo}}</h3>
   </div>
   <div>
     <hr class="text-gray-400">
   </div>
   <nav class="mt-4">
     <ul class="flex justify-center space-x-6 text-white foot-semibold">
-      <li><a href="/paginas/galeria" class="hover:text-yellow-300 hover:cursor-pointer">Galeria</a></li>
-      <li><a href="/paginas/categorias" class="hover:text-yellow-300 hover:cursor-pointer">Categorias</a></li>
-      <li><a href="/paginas/lugares" class="hover:text-yellow-300 hover:cursor-pointer">Lugares</a></li>
-      <li><a href="/paginas" class="hover:text-yellow-300 hover:cursor-pointer">Sair</a></li>
+      <li><a routerLink="/paginas/galeria" class="hover:text-yellow-300 hover:cursor-pointer">Galeria</a></li>
+      <li><a routerLink="/paginas/categorias" class="hover:text-yellow-300 hover:cursor-pointer">Categorias</a></li>
+      <li><a routerLink="/paginas/lugares" class="hover:text-yellow-300 hover:cursor-pointer">Lugares</a></li>
+      <li><a routerLink="/paginas" class="hover:text-yellow-300 hover:cursor-pointer">Sair</a></li>
     </ul>
   </nav>
 </header>

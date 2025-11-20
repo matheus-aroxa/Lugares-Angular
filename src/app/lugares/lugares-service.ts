@@ -29,7 +29,7 @@ export class LugaresService {
     if(nome){
       params = params.append('nome_like', nome);
     }
-    if(categoria){
+    if(categoria && categoria !== "all"){
       params = params.append('categoria', categoria);
     }
 

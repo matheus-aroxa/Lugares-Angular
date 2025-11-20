@@ -9,15 +9,18 @@ const routes: Routes = [
     children: [
       {
         path: 'categorias',
-        loadChildren: () => import('../categorias/categorias-module').then(m => m.CategoriasModule)
+        loadChildren: () => import('../categorias/categorias-module').then(m => m.CategoriasModule),
+        data: { titulo: 'Categorias', subTitulo: 'Realize o cadastro de novas categorias' },
       },
       {
         path: 'lugares',
-        loadChildren: () => import('../lugares/lugares-module').then(m => m.LugaresModule)
+        loadChildren: () => import('../lugares/lugares-module').then(m => m.LugaresModule),
+        data: { titulo: 'Lugares', subTitulo: 'Realize o cadastro de lugares' },
       },
       {
         path: 'galeria',
-        loadChildren: () => import('../galeria/galeria-module').then(m => m.GaleriaModule)
+        loadChildren: () => import('../galeria/galeria-module').then(m => m.GaleriaModule),
+        data: { titulo: 'Lista de lugares legais', subTitulo: 'Descubra os melhores lugares' },
       }
     ]
   }

@@ -9,12 +9,12 @@
       <select class="w-full border border-gray-300 p-2 rounded shadow-sm focus:ring focus:ring-border"
               [(ngModel)]="categoriaFiltro"
               name="categoriaFiltro">
-        <option [value]="" selected>Todas as categorias</option>
+        <option value="all" selected>Todas as categorias</option>
         @for (c of (categorias$ | async); track c.nome){
           <option [value]="c.nome">{{c.nome}}</option>
         }
       </select>
-      <button (click)="filtrar()">Filtrar</button>
+      <button (click)="filtrar()" class="py-2 px-6 bg-blue-800 rounded hover:cursor-pointer text-white hover:bg-blue-700">Filtrar</button>
     </div>
   </form>
 </div>
