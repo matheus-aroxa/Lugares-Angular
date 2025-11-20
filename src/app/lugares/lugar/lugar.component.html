@@ -1,0 +1,66 @@
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+  <h2 class="text-2x1 font-semibold text-gray-700 mg-4">Novo Lugar</h2>
+
+  <form id="lugaresForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="nome">Nome</label>
+      <input formControlName="nome" type="text" id="nome" name="nome" placeholder="Ex: Restaurantes, Praias, Shopping"
+             class="w-full p-3 border-gray-300 rounded shadow-sm focus:ring focus:" required>
+    </div>
+    @if (isCampoInvalid('nome')) {
+      <span class="text-red-500 text-sm">Campo obrigatório</span>
+    }
+
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="categoria">Categoria</label>
+      <select name="categoria" id="categoria" formControlName="categoria">
+        @if(loadingCategorias){
+          <option [value]="" disabled selected>Carregando categorias . . .</option>
+        } @else {
+          <option [value]="" disabled selected>Selecione uma categoria</option>
+          @for(c of categorias; track c.id){
+            <option [value]="c.nome">{{c.nome}}</option>
+          }
+        }
+      </select>
+    </div>
+    @if (isCampoInvalid('categoria')) {
+      <span class="text-red-500 text-sm">Campo obrigatório</span>
+    }
+
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="localizacao">Localização</label>
+      <input formControlName="localizacao" type="text" id="localizacao" name="localizacao" placeholder="Ex: Restaurantes, Praias, Shopping"
+             class="w-full p-3 border-gray-300 rounded shadow-sm focus:ring focus:" required>
+    </div>
+    @if (isCampoInvalid('localizacao')) {
+      <span class="text-red-500 text-sm">Campo obrigatório</span>
+    }
+
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="urlfoto">Url da foto</label>
+      <input formControlName="urlFoto" type="text" id="urlfoto" name="urlfoto" placeholder="Ex: Restaurantes, Praias, Shopping"
+             class="w-full p-3 border-gray-300 rounded shadow-sm focus:ring focus:" required>
+    </div>
+    @if (isCampoInvalid('urlFoto')) {
+      <span class="text-red-500 text-sm">Campo obrigatório</span>
+    }
+
+    <div class="mb-4">
+      <label class="block text-gray-600 font-medium mb-2" for="avaliacao">Avaliação</label>
+      <select formControlName="avaliacao" name="avaliacao" id="avaliacao">
+        <option value="1">1 - Horrível</option>
+        <option value="2">2 - Ruim</option>
+        <option value="3">3 - Mediano</option>
+        <option value="4">4 - Bom</option>
+        <option value="5">5 - Perfeito</option>
+      </select>
+    </div>
+    @if (isCampoInvalid('avaliacao')) {
+      <span class="text-red-500 text-sm">Campo obrigatório</span>
+    }
+
+    <button type="submit" class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700 hover:cursor-pointer mt-4">Salvar Lugar</button>
+  </form>
+</div>

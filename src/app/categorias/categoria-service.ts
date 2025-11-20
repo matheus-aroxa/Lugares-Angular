@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Categoria} from './categoria';
 import {Observable} from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,12 +14,12 @@ export class CategoriaService {
   }
 
   salvar(categoria: Categoria): Observable<Categoria>{
-    let path = '/categories';
+    let path = 'categories';
     return this.http.post<Categoria>(this.basePath + path, categoria);
   }
 
   findAll(): Observable<Categoria[]> {
-    let path = '/categories';
+    let path = 'categories';
     return this.http.get<Categoria[]>(this.basePath + path);
   }
 }

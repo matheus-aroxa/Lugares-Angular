@@ -1,5 +1,24 @@
 {
   "categories": [
-
+    {
+      "id": "7d19",
+      "nome": "Restaurantes",
+      "descricao": "Lugares para comer com a família."
+    },
+    {
+      "id": "b269",
+      "nome": "Academias",
+      "descricao": "Lugares para treinar."
+    }
+  ],
+  "lugares": [
+    {
+      "id": "cd5c",
+      "nome": "Coco Bambu",
+      "categoria": "Restaurantes",
+      "localizacao": "Boa Viagem",
+      "urlFoto": "https://cocobambu.com.br/web/image/16690-11b13377/FOTOS%20COCO%20BAMBU_NY_DIA%2001-008.webp",
+      "avaliacao": "5"
+    }
   ]
 }
